@@ -1,0 +1,5 @@
+{
+  "name": "Video People Counter",
+  "description": "An elegant frontend to upload a video and analyze it to count the number of people present. Designed to connect to a custom AI backend.",
+  "requestFramePermissions": []
+}
