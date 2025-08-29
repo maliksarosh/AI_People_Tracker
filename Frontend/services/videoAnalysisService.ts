@@ -11,10 +11,9 @@ export const analyzeVideo = async (file: File): Promise<AnalysisResult> => {
   const formData = new FormData();
   formData.append('video', file);
 
-  // IMPORTANT: For development, we use the full URL to the backend server.
-  // In production, this might be a relative path like '/api/analyze-video'
-  // if you're using a proxy to route requests.
-  const API_ENDPOINT = 'http://127.0.0.1:5000/api/analyze-video';
+  // Get the API URL from environment variables
+  const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000';
+  const API_ENDPOINT = `${API_URL}/api/analyze-video`;
 
   console.log(`Sending video "${file.name}" to ${API_ENDPOINT}`);
 
